@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scistor.estools.mapper.QuartzJobMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.scistor.estools.entity.QuartzJob">
+        <id column="job_id" property="jobId" />
+        <result column="bean_name" property="beanName" />
+        <result column="cron_expression" property="cronExpression" />
+        <result column="is_pause" property="isPause" />
+        <result column="job_name" property="jobName" />
+        <result column="method_name" property="methodName" />
+        <result column="params" property="params" />
+        <result column="description" property="description" />
+        <result column="person_in_charge" property="personInCharge" />
+        <result column="email" property="email" />
+        <result column="pause_after_failure" property="pauseAfterFailure" />
+        <result column="create_by" property="createBy" />
+        <result column="update_by" property="updateBy" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        job_id, bean_name, cron_expression, is_pause, job_name, method_name,
+        params, description,person_in_charge, email, pause_after_failure,
+        create_by, update_by, create_time, update_time
+    </sql>
+
+</mapper>

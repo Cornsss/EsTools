@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scistor.estools.mapper.DataConfigMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.scistor.estools.entity.DataConfig">
+        <result column="field" property="field" />
+        <result column="type" property="type" />
+        <result column="config" property="config" />
+        <result column="index_name" property="indexName" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        field, config, type, index_name
+    </sql>
+
+    <select id="queryDataConfigGroup" resultMap="BaseResultMap">
+        SELECT
+            index_name
+        FROM
+            data_config
+        group by index_name
+    </select>
+
+</mapper>

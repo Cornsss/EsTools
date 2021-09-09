@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据项配置页面</title>
+</head>
+<body>
+<form method="post" action="/es/connectEs">
+    <div th:each="item : ${mapping}">
+        <label th:text="${item}"></label>
+        <!--<input type="text" name="port"><br>-->
+    </div>
+</form>
+</body>
+</html>

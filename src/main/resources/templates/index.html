@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>索引列表页面</title>
+</head>
+<body>
+<h3 th:text="${ message }"></h3>
+
+<div style="text-align:center;">
+  <table border="1" style="margin: auto;" width='80%' >
+    <tr>
+      <th>健康状态</th>
+      <th>索引名称</th>
+      <th>uuid</th>
+      <th>存储空间</th>
+      <th>文档数量</th>
+      <th>操作</th>
+    </tr>
+    <tr th:each="item : ${indexs}">
+      <td th:text="${item.health}"></td>
+      <td th:text="${item.index}"></td>
+      <td th:text="${item.uuid}"></td>
+      <td th:text="${item.priStoreSize}"></td>
+      <td th:text="${item.docsCount}"></td>
+      <td>
+        <button  class="btn btn-sm btn-primary" th:href="@{/es/getIndexMappingd/}+${item.index}">数据项配置</button>
+        <button class="btn btn-sm btn-danger delete-btn">定时任务配置</button>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
